@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS maintenance_tracker;
+USE maintenance_tracker;
+
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50),
+  role VARCHAR(20),
+  flat VARCHAR(10)
+);
+
+CREATE TABLE complaints (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  flat VARCHAR(10),
+  category VARCHAR(30),
+  issue TEXT,
+  status VARCHAR(30),
+  worker VARCHAR(50)
+);
+
+-- EXTRA FEATURES
+CREATE TABLE announcements (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  message TEXT,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE guests (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  flat VARCHAR(10),
+  guest_name VARCHAR(50),
+  approved VARCHAR(10)
+);
+
+CREATE TABLE parking (
+  slot INT PRIMARY KEY,
+  status VARCHAR(20)
+);
+
+CREATE TABLE emergency_alerts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  message VARCHAR(100),
+  time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
