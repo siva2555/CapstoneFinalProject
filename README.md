@@ -1,12 +1,11 @@
-Capstone project 
-Digital Maintenance Tracker for Apartments /
-Buildings
-Project Overview
+       Capstone project 
+Title: Digital Maintenance Tracker for Apartments /Buildings
+Project Overview:
 The Digital Maintenance Tracker is a web-based application designed to manage apartment and
 building maintenance activities digitally. It helps residents, administrators, and maintenance staff
 efficiently track complaints, payments, and service status, replacing manual records with a
 centralized online system.
-Objectives
+Objectives:
 • Manage maintenance complaints
 • Track maintenance payments
 • Assign and monitor maintenance tasks
