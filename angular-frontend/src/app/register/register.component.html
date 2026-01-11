@@ -1,0 +1,30 @@
+<div class="auth-page">
+  <div class="auth-card">
+
+    <h2>📝 Register</h2>
+
+    <input placeholder="Full Name" [(ngModel)]="name" />
+    <input type="email" placeholder="Email" [(ngModel)]="email" />
+    <input type="password" placeholder="Password" [(ngModel)]="password" />
+
+    <select [(ngModel)]="role">
+      <option value="RESIDENT">Resident</option>
+      <option value="WORKER">Worker</option>
+      <option value="ADMIN">Admin</option>
+    </select>
+    <input
+    *ngIf="role === 'RESIDENT'"
+    type="text"
+    placeholder="Flat Number (e.g. A-101)"
+    [(ngModel)]="flatNo"
+  />
+
+    <button (click)="register()">Register</button>
+
+    <p>
+      Already have an account?
+      <a routerLink="/">Login</a>
+    </p>
+
+  </div>
+</div>

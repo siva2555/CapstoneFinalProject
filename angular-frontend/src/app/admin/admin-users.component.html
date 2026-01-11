@@ -1,0 +1,20 @@
+<div class="notice-wrapper">
+    <div class="notice-header">
+    <h2>👥 Resident Users</h2>
+
+    <button class="back-btn" routerLink="/admin">
+      ⬅ Back to Dashboard
+    </button>
+  </div>
+    <div *ngIf="loading">Loading users...</div>
+
+    <div *ngIf="!loading && users.length === 0">
+    No users found
+    </div>
+
+<div *ngFor="let u of users" class="user-card">
+  <p><b>Name:</b> {{ u.name }}</p>
+  <p><b>Email:</b> {{ u.email }}</p>
+  <p><b>Flat No:</b> {{ u.flat_no }}</p>
+</div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="notice-wrapper">
+
+  <div class="notice-header">
+    <h2>➕ Add Notice</h2>
+
+    <button class="back-btn" routerLink="/admin">
+      ⬅ Back to Dashboard
+    </button>
+  </div>
+
+  <div class="admin-box">
+    <input
+      type="text"
+      placeholder="Notice Title"
+      [(ngModel)]="title"
+    />
+
+    <textarea
+      rows="4"
+      placeholder="Notice Message"
+      [(ngModel)]="message"
+    ></textarea>
+
+    <button (click)="addNotice()" [disabled]="loading">
+      {{ loading ? 'Publishing...' : 'Publish Notice' }}
+    </button>
+  </div>
+
+</div>

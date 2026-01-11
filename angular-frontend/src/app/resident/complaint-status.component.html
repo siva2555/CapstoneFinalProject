@@ -1,0 +1,31 @@
+<div class="status-page">
+
+  <h2>📋 Complaint Status</h2>
+
+  <div *ngIf="complaints.length === 0">
+    <p>No complaints found.</p>
+  </div>
+
+  <div class="status-card" *ngFor="let c of complaints">
+
+    <p><b>Category:</b> {{ c.category }}</p>
+    <p><b>Issue:</b> {{ c.issue }}</p>
+
+    <p>
+      <b>Status:</b>
+      <span class="badge" [ngClass]="c.status.toLowerCase()">
+        {{ c.status }}
+      </span>
+    </p>
+
+    <p *ngIf="c.worker_name">
+      <b>Worker:</b> {{ c.worker_name }} ({{ c.worker_phone }})
+    </p>
+
+    <p *ngIf="c.visit_date">
+      <b>Visit Date:</b> {{ c.visit_date }}
+    </p>
+
+  </div>
+
+</div>

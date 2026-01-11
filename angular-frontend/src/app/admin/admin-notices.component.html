@@ -1,0 +1,31 @@
+<div class="notice-wrapper">
+
+  <div class="notice-header">
+    <h2>📢 Admin Notices</h2>
+
+    <button class="back-btn" routerLink="/admin">
+      ⬅ Back to Dashboard
+    </button>
+  </div>
+
+  <!-- LOADING -->
+  <div *ngIf="loading" class="loading">Loading notices...</div>
+
+  <!-- NO DATA -->
+  <div *ngIf="!loading && notices.length === 0" class="no-notice">
+    No notices available
+  </div>
+
+  <!-- DATA -->
+  <div *ngIf="!loading && notices.length > 0" class="notice-grid">
+    <div *ngFor="let n of notices" class="notice-card">
+      <h4>{{ n.title }}</h4>
+      <p>{{ n.message }}</p>
+
+      <button class="delete-btn" (click)="deleteNotice(n.id)">
+        🗑 Delete
+      </button>
+    </div>
+  </div>
+
+</div>

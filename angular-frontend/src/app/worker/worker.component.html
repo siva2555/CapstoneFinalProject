@@ -1,0 +1,159 @@
+<div style="
+  padding:20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height:100vh;
+  color:white;
+">
+
+  <!-- HEADER WITH LOGOUT -->
+  <div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+  ">
+    <h2 style="margin:0;">
+      👷 Worker – Pending Complaints
+    </h2>
+
+    <button class="logout-btn" (click)="logout()">
+    🚪 Logout
+  </button>
+  </div>
+
+  <!-- COMPLAINTS TABLE -->
+  <table style="
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    color:#333;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  ">
+    <tr style="background:#4f46e5; color:white;">
+      <th style="padding:14px;">Flat</th>
+      <th style="padding:14px;">Issue</th>
+      <th style="padding:14px;">Action</th>
+    </tr>
+
+    <tr *ngFor="let c of complaints" style="border-bottom:1px solid #e5e7eb;">
+      <td style="padding:12px; text-align:center;">
+        {{ c.flat }}
+      </td>
+
+      <td style="padding:12px;">
+        {{ c.issue }}
+      </td>
+
+      <td style="padding:12px; text-align:center;">
+        <button
+          (click)="selectComplaint(c)"
+          style="
+            background:#22c55e;
+            border:none;
+            padding:8px 18px;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:600;
+          ">
+          Take
+        </button>
+      </td>
+    </tr>
+
+    <!-- NO DATA -->
+    <tr *ngIf="complaints.length === 0">
+      <td colspan="3" style="
+        padding:16px;
+        text-align:center;
+        color:#6b7280;
+        font-style:italic;
+      ">
+        🚫 No pending complaints
+      </td>
+    </tr>
+  </table>
+
+  <!-- ASSIGN COMPLAINT FORM -->
+  <div *ngIf="selectedComplaint"
+       style="
+         margin-top:30px;
+         background:white;
+         color:#333;
+         padding:22px;
+         border-radius:12px;
+         max-width:420px;
+         margin-left:auto;
+         margin-right:auto;
+         box-shadow:0 10px 25px rgba(0,0,0,0.25);
+       ">
+
+    <h3 style="
+      text-align:center;
+      margin-bottom:18px;
+      color:#4f46e5;
+    ">
+      🛠 Assign Complaint
+    </h3>
+
+    <input
+      placeholder="Worker Name"
+      [(ngModel)]="worker_name"
+      style="
+        width:100%;
+        padding:12px;
+        margin-bottom:12px;
+        border-radius:8px;
+        border:1px solid #d1d5db;
+        font-size:14px;
+      "
+    >
+
+    <input
+      placeholder="Phone Number"
+      [(ngModel)]="worker_phone"
+      style="
+        width:100%;
+        padding:12px;
+        margin-bottom:12px;
+        border-radius:8px;
+        border:1px solid #d1d5db;
+        font-size:14px;
+      "
+    >
+
+    <input
+      type="date"
+      [(ngModel)]="visit_date"
+      style="
+        width:100%;
+        padding:12px;
+        margin-bottom:18px;
+        border-radius:8px;
+        border:1px solid #d1d5db;
+        font-size:14px;
+      "
+    >
+
+    <button
+      (click)="submit()"
+      style="
+        width:100%;
+        background:#4f46e5;
+        border:none;
+        padding:12px;
+        color:white;
+        font-size:16px;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:bold;
+      ">
+      Submit Assignment
+    </button>
+
+  </div>
+
+</div>

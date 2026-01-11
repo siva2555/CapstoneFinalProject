@@ -1,0 +1,46 @@
+<div class="resident-dashboard">
+
+  <!-- HEADER -->
+  <div class="dashboard-header">
+    <h2>🏠 Resident Dashboard</h2>
+    <p>Welcome! Manage your apartment services</p>
+    <button class="logout-btn" (click)="logout()">
+    🚪 Logout
+  </button>
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="card-grid">
+
+    <!-- NOTICES -->
+    <div class="feature-card notice" (click)="goToNotices()">
+      <h3>📢 Notices</h3>
+      <p>Today’s announcements</p>
+    </div>
+
+    <!-- REGISTER COMPLAINT -->
+    <div class="feature-card complaint" (click)="goToComplaint()">
+      <h3>🛠️ Register Complaint</h3>
+      <p>Tap to raise an issue</p>
+    </div>
+
+    <!-- CHECK STATUS -->
+    <div class="feature-card status" (click)="goToStatus()">
+      <h3>📋 Check Status</h3>
+      <p>Track your complaints</p>
+    </div>
+
+    <!-- GATE ENTRY -->
+    <div class="feature-card gate" (click)="goToGateEntry()">
+      <h3>🚪 Gate Entry</h3>
+      <p>Visitors & delivery</p>
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="feature-card payment" (click)="goToPayment()">
+      <h3>💳 Maintenance</h3>
+      <p>Pay rent & dues</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="card">
+<h3>Facility Booking</h3>
+<select [(ngModel)]="facility">
+<option>Community Hall</option>
+<option>Gym</option>
+<option>Parking</option>
+</select>
+<input [(ngModel)]="flat" placeholder="Flat No">
+<input [(ngModel)]="date" type="date">
+<button (click)="book()">Book</button>
+</div>

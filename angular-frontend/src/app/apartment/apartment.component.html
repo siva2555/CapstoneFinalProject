@@ -1,0 +1,13 @@
+<div class="card">
+  <h2>Apartment Setup</h2>
+
+  <input [(ngModel)]="name" placeholder="Apartment Name">
+  <input [(ngModel)]="floors" type="number" placeholder="Floors">
+  <input [(ngModel)]="flatsPerFloor" type="number" placeholder="Flats / Floor">
+
+  <button (click)="generate()">Generate Flats</button>
+
+  <ul>
+    <li *ngFor="let f of flats">{{ f }}</li>
+  </ul>
+</div>

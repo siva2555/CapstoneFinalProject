@@ -1,0 +1,61 @@
+<div class="complaint-page">
+
+  <!-- HEADER WITH BACK BUTTON -->
+  <div class="complaint-header">
+    <div class="header-row">
+      <h2>🛠️ Register Complaint</h2>
+    </div>
+    <p>Raise an issue and our team will fix it quickly</p>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="complaint-card">
+    <form (ngSubmit)="submitComplaint()" #f="ngForm">
+
+      <label>🏠 Flat Number</label>
+      <input
+        type="text"
+        [(ngModel)]="flat"
+        name="flat"
+        placeholder="Eg: A-101"
+        required
+      />
+
+      <label>🔧 Complaint Category</label>
+      <select
+        [(ngModel)]="category"
+        name="category"
+        required
+      >
+        <option value="">Select Category</option>
+        <option>Electrician</option>
+        <option>Plumber</option>
+        <option>Lift</option>
+        <option>Water</option>
+        <option>Cleaning</option>
+      </select>
+
+      <label>📝 Issue Description</label>
+      <textarea
+        [(ngModel)]="issue"
+        name="issue"
+        rows="4"
+        placeholder="Describe the problem in detail..."
+        required
+      ></textarea>
+
+      <button type="submit" [disabled]="!f.valid">
+        🚀 Submit Complaint
+      </button>
+      <button
+  type="button"
+  class="back-btn"
+  (click)="goBack()"
+>
+  ⬅ Back to Dashboard
+</button>
+
+    </form>
+  </div>
+
+</div>

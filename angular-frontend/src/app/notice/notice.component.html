@@ -1,0 +1,27 @@
+<div class="notice-page">
+  <div class="notice-card">
+
+    <h2>📢 Add Notice</h2>
+
+    <input
+      type="text"
+      placeholder="Notice Title"
+      [(ngModel)]="title"
+    />
+
+    <textarea
+      rows="5"
+      placeholder="Notice Message"
+      [(ngModel)]="message"
+    ></textarea>
+
+    <button type="button" (click)="addNotice()">
+  Publish Notice
+</button>
+
+    <p>
+      <a routerLink="/admin">⬅ Back to Admin</a>
+    </p>
+
+  </div>
+</div>
